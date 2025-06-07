@@ -1,0 +1,60 @@
+version: '3.8'
+
+services:
+  frontend-test:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    ports:
+      - "3001:80"
+    environment:
+      - REACT_APP_API_URL=http://backend-test:3000
+      - NODE_ENV=test
+    depends_on:
+      - backend-test
+    networks:
+      - test-network
+
+  backend-test:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=test
+      - PORT=3000
+      - DATABASE_URL=postgresql://test:test@postgres-test:5432/vpofone_test
+      - REDIS_URL=redis://redis-test:6379
+      - JWT_SECRET=test-secret-key
+      - LOG_LEVEL=error
+    depends_on:
+      - postgres-test
+      - redis-test
+    networks:
+      - test-network
+
+  postgres-test:
+    image: postgres:15-alpine
+    environment:
+      - POSTGRES_USER=test
+      - POSTGRES_PASSWORD=test
+      - POSTGRES_DB=vpofone_test
+    ports:
+      - "5433:5432"
+    tmpfs:
+      - /var/lib/postgresql/data
+    networks:
+      - test-network
+
+  redis-test:
+    image: redis:7-alpine
+    command: redis-server --save ""
+    ports:
+      - "6380:6379"
+    networks:
+      - test-network
+
+networks:
+  test-network:
+    driver: bridge
