@@ -2,6 +2,8 @@
   "compilerOptions": {
     "target": "es5",
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
@@ -27,6 +29,7 @@
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]
 =======
+>>>>>>> origin/main
     "lib": [
       "dom",
       "dom.iterable",
@@ -49,5 +52,8 @@
   "include": [
     "src"
   ]
+<<<<<<< HEAD
+=======
+>>>>>>> origin/main
 >>>>>>> origin/main
 }
