@@ -1,4 +1,11 @@
 /** @type {import('next').NextConfig} */
+<<<<<<< HEAD
+const nextConfig = {
+  reactStrictMode: true,
+}
+
+module.exports = nextConfig
+=======
 
 const securityHeaders = [
   {
@@ -184,3 +191,4 @@ const nextConfig = {
 };
 
 module.exports = nextConfig;
+>>>>>>> origin/main
