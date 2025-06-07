@@ -1,0 +1,16 @@
+# Development
+.vscode/
+.idea/
+*.log
+.env*.local
+
+# Dependencies
+node_modules/
+frontend/node_modules/
+
+# Project Folders
+docs/
+scripts/
+
+# Mac
+.DS_Store 
