@@ -1,0 +1,184 @@
+@import '../../styles/variables.css';
+
+.stack {
+  display: flex;
+}
+
+/* Direction */
+.stack--vertical {
+  flex-direction: column;
+}
+
+.stack--horizontal {
+  flex-direction: row;
+}
+
+/* Spacing */
+.stack--spacing-none {
+  gap: 0;
+}
+
+.stack--spacing-xs {
+  gap: var(--spacing-xs);
+}
+
+.stack--spacing-sm {
+  gap: var(--spacing-sm);
+}
+
+.stack--spacing-md {
+  gap: var(--spacing-md);
+}
+
+.stack--spacing-lg {
+  gap: var(--spacing-lg);
+}
+
+.stack--spacing-xl {
+  gap: var(--spacing-xl);
+}
+
+/* Alignment */
+.stack--align-start {
+  align-items: flex-start;
+}
+
+.stack--align-center {
+  align-items: center;
+}
+
+.stack--align-end {
+  align-items: flex-end;
+}
+
+.stack--align-stretch {
+  align-items: stretch;
+}
+
+/* Justify */
+.stack--justify-start {
+  justify-content: flex-start;
+}
+
+.stack--justify-center {
+  justify-content: center;
+}
+
+.stack--justify-end {
+  justify-content: flex-end;
+}
+
+.stack--justify-between {
+  justify-content: space-between;
+}
+
+.stack--justify-around {
+  justify-content: space-around;
+}
+
+.stack--justify-evenly {
+  justify-content: space-evenly;
+}
+
+/* Wrap */
+.stack--wrap {
+  flex-wrap: wrap;
+}
+
+/* Divider */
+.stack--divider {
+  gap: 0;
+}
+
+.stack-divider {
+  background-color: var(--color-gray-200);
+}
+
+.stack--vertical .stack-divider {
+  width: 100%;
+  height: 1px;
+}
+
+.stack--horizontal .stack-divider {
+  width: 1px;
+  height: 100%;
+  align-self: stretch;
+}
+
+/* Stack item with divider */
+.stack--vertical.stack--divider .stack-item {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.stack--vertical.stack--spacing-xs.stack--divider .stack-item {
+  padding-top: calc(var(--spacing-xs) / 2);
+  padding-bottom: calc(var(--spacing-xs) / 2);
+}
+
+.stack--vertical.stack--spacing-sm.stack--divider .stack-item {
+  padding-top: calc(var(--spacing-sm) / 2);
+  padding-bottom: calc(var(--spacing-sm) / 2);
+}
+
+.stack--vertical.stack--spacing-md.stack--divider .stack-item {
+  padding-top: calc(var(--spacing-md) / 2);
+  padding-bottom: calc(var(--spacing-md) / 2);
+}
+
+.stack--vertical.stack--spacing-lg.stack--divider .stack-item {
+  padding-top: calc(var(--spacing-lg) / 2);
+  padding-bottom: calc(var(--spacing-lg) / 2);
+}
+
+.stack--vertical.stack--spacing-xl.stack--divider .stack-item {
+  padding-top: calc(var(--spacing-xl) / 2);
+  padding-bottom: calc(var(--spacing-xl) / 2);
+}
+
+.stack--horizontal.stack--divider .stack-item {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.stack--horizontal.stack--spacing-xs.stack--divider .stack-item {
+  padding-left: calc(var(--spacing-xs) / 2);
+  padding-right: calc(var(--spacing-xs) / 2);
+}
+
+.stack--horizontal.stack--spacing-sm.stack--divider .stack-item {
+  padding-left: calc(var(--spacing-sm) / 2);
+  padding-right: calc(var(--spacing-sm) / 2);
+}
+
+.stack--horizontal.stack--spacing-md.stack--divider .stack-item {
+  padding-left: calc(var(--spacing-md) / 2);
+  padding-right: calc(var(--spacing-md) / 2);
+}
+
+.stack--horizontal.stack--spacing-lg.stack--divider .stack-item {
+  padding-left: calc(var(--spacing-lg) / 2);
+  padding-right: calc(var(--spacing-lg) / 2);
+}
+
+.stack--horizontal.stack--spacing-xl.stack--divider .stack-item {
+  padding-left: calc(var(--spacing-xl) / 2);
+  padding-right: calc(var(--spacing-xl) / 2);
+}
+
+/* First and last items shouldn't have extra padding */
+.stack--vertical.stack--divider .stack-item:first-child {
+  padding-top: 0;
+}
+
+.stack--vertical.stack--divider .stack-item:last-child {
+  padding-bottom: 0;
+}
+
+.stack--horizontal.stack--divider .stack-item:first-child {
+  padding-left: 0;
+}
+
+.stack--horizontal.stack--divider .stack-item:last-child {
+  padding-right: 0;
+}

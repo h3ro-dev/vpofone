@@ -1,0 +1,228 @@
+@import '../../styles/variables.css';
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-columns, 1), 1fr);
+}
+
+/* Responsive grid */
+.grid--responsive {
+  grid-template-columns: repeat(var(--grid-columns-base, 1), 1fr);
+}
+
+@media (min-width: 640px) {
+  .grid--responsive {
+    grid-template-columns: repeat(var(--grid-columns-sm, var(--grid-columns-base, 1)), 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .grid--responsive {
+    grid-template-columns: repeat(var(--grid-columns-md, var(--grid-columns-sm, var(--grid-columns-base, 1))), 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid--responsive {
+    grid-template-columns: repeat(var(--grid-columns-lg, var(--grid-columns-md, var(--grid-columns-sm, var(--grid-columns-base, 1)))), 1fr);
+  }
+}
+
+@media (min-width: 1280px) {
+  .grid--responsive {
+    grid-template-columns: repeat(var(--grid-columns-xl, var(--grid-columns-lg, var(--grid-columns-md, var(--grid-columns-sm, var(--grid-columns-base, 1))))), 1fr);
+  }
+}
+
+/* Gap variants */
+.grid--gap-none {
+  gap: 0;
+}
+
+.grid--gap-xs {
+  gap: var(--spacing-xs);
+}
+
+.grid--gap-sm {
+  gap: var(--spacing-sm);
+}
+
+.grid--gap-md {
+  gap: var(--spacing-md);
+}
+
+.grid--gap-lg {
+  gap: var(--spacing-lg);
+}
+
+.grid--gap-xl {
+  gap: var(--spacing-xl);
+}
+
+/* Row gap variants */
+.grid--row-gap-none {
+  row-gap: 0;
+}
+
+.grid--row-gap-xs {
+  row-gap: var(--spacing-xs);
+}
+
+.grid--row-gap-sm {
+  row-gap: var(--spacing-sm);
+}
+
+.grid--row-gap-md {
+  row-gap: var(--spacing-md);
+}
+
+.grid--row-gap-lg {
+  row-gap: var(--spacing-lg);
+}
+
+.grid--row-gap-xl {
+  row-gap: var(--spacing-xl);
+}
+
+/* Column gap variants */
+.grid--column-gap-none {
+  column-gap: 0;
+}
+
+.grid--column-gap-xs {
+  column-gap: var(--spacing-xs);
+}
+
+.grid--column-gap-sm {
+  column-gap: var(--spacing-sm);
+}
+
+.grid--column-gap-md {
+  column-gap: var(--spacing-md);
+}
+
+.grid--column-gap-lg {
+  column-gap: var(--spacing-lg);
+}
+
+.grid--column-gap-xl {
+  column-gap: var(--spacing-xl);
+}
+
+/* Align items */
+.grid--align-start {
+  align-items: start;
+}
+
+.grid--align-center {
+  align-items: center;
+}
+
+.grid--align-end {
+  align-items: end;
+}
+
+.grid--align-stretch {
+  align-items: stretch;
+}
+
+.grid--align-baseline {
+  align-items: baseline;
+}
+
+/* Justify items */
+.grid--justify-start {
+  justify-items: start;
+}
+
+.grid--justify-center {
+  justify-items: center;
+}
+
+.grid--justify-end {
+  justify-items: end;
+}
+
+.grid--justify-stretch {
+  justify-items: stretch;
+}
+
+/* Grid Item */
+.grid-item {
+  min-width: 0; /* Prevent overflow */
+}
+
+/* Responsive span */
+@media (min-width: 640px) {
+  .grid-item--responsive-span {
+    grid-column: span var(--grid-span-sm, 1);
+  }
+}
+
+@media (min-width: 768px) {
+  .grid-item--responsive-span {
+    grid-column: span var(--grid-span-md, var(--grid-span-sm, 1));
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-item--responsive-span {
+    grid-column: span var(--grid-span-lg, var(--grid-span-md, var(--grid-span-sm, 1)));
+  }
+}
+
+@media (min-width: 1280px) {
+  .grid-item--responsive-span {
+    grid-column: span var(--grid-span-xl, var(--grid-span-lg, var(--grid-span-md, var(--grid-span-sm, 1))));
+  }
+}
+
+/* Responsive start */
+@media (min-width: 640px) {
+  .grid-item--responsive-start {
+    grid-column-start: var(--grid-start-sm);
+  }
+}
+
+@media (min-width: 768px) {
+  .grid-item--responsive-start {
+    grid-column-start: var(--grid-start-md, var(--grid-start-sm));
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-item--responsive-start {
+    grid-column-start: var(--grid-start-lg, var(--grid-start-md, var(--grid-start-sm)));
+  }
+}
+
+@media (min-width: 1280px) {
+  .grid-item--responsive-start {
+    grid-column-start: var(--grid-start-xl, var(--grid-start-lg, var(--grid-start-md, var(--grid-start-sm))));
+  }
+}
+
+/* Responsive end */
+@media (min-width: 640px) {
+  .grid-item--responsive-end {
+    grid-column-end: var(--grid-end-sm);
+  }
+}
+
+@media (min-width: 768px) {
+  .grid-item--responsive-end {
+    grid-column-end: var(--grid-end-md, var(--grid-end-sm));
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-item--responsive-end {
+    grid-column-end: var(--grid-end-lg, var(--grid-end-md, var(--grid-end-sm)));
+  }
+}
+
+@media (min-width: 1280px) {
+  .grid-item--responsive-end {
+    grid-column-end: var(--grid-end-xl, var(--grid-end-lg, var(--grid-end-md, var(--grid-end-sm))));
+  }
+}

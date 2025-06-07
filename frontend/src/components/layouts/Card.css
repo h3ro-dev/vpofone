@@ -1,0 +1,124 @@
+@import '../../styles/variables.css';
+
+.card {
+  background-color: white;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: all var(--transition-base);
+}
+
+/* Padding variants */
+.card--padding-none {
+  padding: 0;
+}
+
+.card--padding-xs {
+  padding: var(--spacing-xs);
+}
+
+.card--padding-sm {
+  padding: var(--spacing-sm);
+}
+
+.card--padding-md {
+  padding: var(--spacing-md);
+}
+
+.card--padding-lg {
+  padding: var(--spacing-lg);
+}
+
+.card--padding-xl {
+  padding: var(--spacing-xl);
+}
+
+/* Shadow variants */
+.card--shadow-none {
+  box-shadow: none;
+}
+
+.card--shadow-sm {
+  box-shadow: var(--shadow-sm);
+}
+
+.card--shadow-md {
+  box-shadow: var(--shadow-md);
+}
+
+.card--shadow-lg {
+  box-shadow: var(--shadow-lg);
+}
+
+/* Border */
+.card--border {
+  border: 1px solid var(--color-gray-200);
+}
+
+/* Hoverable */
+.card--hoverable:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Clickable */
+.card--clickable {
+  cursor: pointer;
+}
+
+.card--clickable:active {
+  transform: translateY(0);
+}
+
+/* Card sections */
+.card-header {
+  padding: var(--spacing-md);
+  border-bottom: 1px solid var(--color-gray-200);
+  font-weight: 600;
+}
+
+.card-body {
+  padding: var(--spacing-md);
+}
+
+.card-footer {
+  padding: var(--spacing-md);
+  border-top: 1px solid var(--color-gray-200);
+  background-color: var(--color-gray-50);
+}
+
+/* When using padding on card, adjust section padding */
+.card--padding-none .card-header,
+.card--padding-none .card-body,
+.card--padding-none .card-footer {
+  padding: var(--spacing-md);
+}
+
+/* Ensure proper spacing when sections are used together */
+.card-header + .card-body {
+  padding-top: var(--spacing-md);
+}
+
+.card-body + .card-footer {
+  margin-top: var(--spacing-md);
+}
+
+/* Dark mode support (optional) */
+@media (prefers-color-scheme: dark) {
+  .card {
+    background-color: var(--color-gray-800);
+    color: var(--color-gray-100);
+  }
+  
+  .card--border {
+    border-color: var(--color-gray-700);
+  }
+  
+  .card-header {
+    border-color: var(--color-gray-700);
+  }
+  
+  .card-footer {
+    border-color: var(--color-gray-700);
+    background-color: var(--color-gray-900);
+  }
+}
