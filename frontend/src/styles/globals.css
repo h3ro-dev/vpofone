@@ -2,6 +2,115 @@
 @tailwind components;
 @tailwind utilities;
 
+<<<<<<< HEAD
+/* Custom CSS Variables */
+:root {
+  --primary: #4169E1;
+  --accent: #9B59B6;
+  --text-primary: #1A1A1A;
+  --text-secondary: #6B7280;
+  --background: #FFFFFF;
+  --background-secondary: #F8F9FA;
+}
+
+/* Base styles for performance */
+@layer base {
+  /* Optimize font loading */
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Prevent layout shift */
+  body {
+    min-height: 100vh;
+    scroll-behavior: smooth;
+  }
+
+  /* Optimize images */
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* Focus styles for accessibility */
+  :focus {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+  }
+
+  /* Reduce motion for accessibility */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+/* Component styles */
+@layer components {
+  /* Button base styles */
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3 font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+
+  .btn-primary {
+    @apply btn bg-primary text-white hover:bg-blue-600 focus:ring-primary;
+  }
+
+  .btn-secondary {
+    @apply btn bg-accent text-white hover:bg-purple-600 focus:ring-accent;
+  }
+
+  /* Container with max width */
+  .container-max {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
+  }
+
+  /* Section spacing */
+  .section {
+    @apply py-12 sm:py-16 lg:py-20;
+  }
+
+  /* Card styles */
+  .card {
+    @apply bg-white rounded-xl shadow-sm border border-gray-100 p-6 transition-shadow hover:shadow-md;
+  }
+}
+
+/* Utility classes */
+@layer utilities {
+  /* Text gradient */
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+  }
+
+  /* Skeleton loader */
+  .skeleton {
+    @apply bg-gray-200 animate-pulse rounded;
+  }
+
+  /* Aspect ratios for images */
+  .aspect-video {
+    aspect-ratio: 16 / 9;
+  }
+
+  .aspect-square {
+    aspect-ratio: 1 / 1;
+  }
+
+  /* Performance: GPU acceleration */
+  .gpu-accelerated {
+    transform: translateZ(0);
+    will-change: transform;
+=======
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -46,5 +155,6 @@
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+>>>>>>> origin/main
   }
 }
