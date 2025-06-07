@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 'use client'
 
 import { useEffect } from 'react'
@@ -174,5 +175,19 @@ export default function HomePage() {
         </div>
       </section>
     </>
+=======
+import React from 'react'
+import HeroSection from '@/components/HeroSection'
+import PainPointsSection from '@/components/PainPointsSection'
+import FeaturesSection from '@/components/FeaturesSection'
+
+export default function HomePage() {
+  return (
+    <main>
+      <HeroSection />
+      <PainPointsSection />
+      <FeaturesSection />
+    </main>
+>>>>>>> origin/main
   )
 }

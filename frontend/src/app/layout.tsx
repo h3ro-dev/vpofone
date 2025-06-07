@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+<<<<<<< HEAD
 import { AnalyticsProvider } from '@/components/analytics/AnalyticsProvider'
 import { GoogleAnalytics } from '@/components/analytics/GoogleAnalytics'
 import '../styles/globals.css'
@@ -71,6 +72,23 @@ export const metadata: Metadata = {
   },
   manifest: '/manifest.json',
   themeColor: '#4169E1',
+=======
+import React from 'react'
+import Navigation from '@/components/Navigation'
+import '@/styles/globals.css'
+
+const inter = Inter({ subsets: ['latin'] })
+
+export const metadata: Metadata = {
+  title: 'VP of One - Executive Leverage for Solo Leaders',
+  description: 'Suite of AI executive assistants for strategy, analytics, and operations. Punch above your weight – lead big with a small team.',
+  keywords: 'executive assistant, AI, strategy, analytics, operations, VP, leadership',
+  openGraph: {
+    title: 'VP of One - Executive Leverage for Solo Leaders',
+    description: 'Suite of AI executive assistants for strategy, analytics, and operations',
+    type: 'website',
+  },
+>>>>>>> origin/main
 }
 
 export default function RootLayout({
@@ -78,6 +96,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+<<<<<<< HEAD
   // Replace with your actual Google Analytics ID
   const GA_ID = process.env.NEXT_PUBLIC_GA_ID || ''
 
@@ -93,6 +112,13 @@ export default function RootLayout({
         <AnalyticsProvider gaId={GA_ID}>
           {children}
         </AnalyticsProvider>
+=======
+  return (
+    <html lang="en">
+      <body className={inter.className}>
+        <Navigation />
+        {children}
+>>>>>>> origin/main
       </body>
     </html>
   )
