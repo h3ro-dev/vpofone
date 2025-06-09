@@ -3,13 +3,27 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --utlyze-blue: #4169E1;
+  --accent-purple: #9B59B6;
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-utlyze-blue: var(--utlyze-blue);
+  --color-accent-purple: var(--accent-purple);
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -19,8 +33,99 @@
   }
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Utlyze Blue Button Styles */
+.btn-primary {
+  background-color: var(--utlyze-blue);
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #365bd1;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(65, 105, 225, 0.3);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--utlyze-blue);
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  border: 2px solid var(--utlyze-blue);
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background-color: var(--utlyze-blue);
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(65, 105, 225, 0.3);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+/* Custom Tailwind Extensions */
+@layer utilities {
+  .text-utlyze-blue {
+    color: var(--utlyze-blue);
+  }
+  
+  .bg-utlyze-blue {
+    background-color: var(--utlyze-blue);
+  }
+  
+  .border-utlyze-blue {
+    border-color: var(--utlyze-blue);
+  }
+  
+  .text-accent-purple {
+    color: var(--accent-purple);
+  }
+  
+  .bg-accent-purple {
+    background-color: var(--accent-purple);
+  }
 }

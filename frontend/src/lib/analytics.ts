@@ -107,12 +107,12 @@ export const trackPerformance = () => {
     };
     
     // Import web-vitals dynamically
-    import('web-vitals').then(({getCLS, getFID, getFCP, getLCP, getTTFB}) => {
-      getCLS(sendToGoogleAnalytics);
-      getFID(sendToGoogleAnalytics);
-      getFCP(sendToGoogleAnalytics);
-      getLCP(sendToGoogleAnalytics);
-      getTTFB(sendToGoogleAnalytics);
+    import('web-vitals').then((webVitals) => {
+      webVitals.onCLS(sendToGoogleAnalytics);
+      webVitals.onINP(sendToGoogleAnalytics); // INP replaced FID in web-vitals v5
+      webVitals.onFCP(sendToGoogleAnalytics);
+      webVitals.onLCP(sendToGoogleAnalytics);
+      webVitals.onTTFB(sendToGoogleAnalytics);
     });
   }
 };

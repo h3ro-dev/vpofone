@@ -31,17 +31,17 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     ref
   ) => {
     const baseClasses = `
-      inline-flex items-center justify-center font-medium transition-all 
+      inline-flex items-center justify-center font-semibold transition-all 
       focus:outline-none focus:ring-2 focus:ring-offset-2 
-      disabled:opacity-50 disabled:cursor-not-allowed
+      disabled:opacity-50 disabled:cursor-not-allowed rounded-lg
     `;
 
     const variantClasses = {
-      primary: 'bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-500',
-      secondary: 'bg-purple-600 text-white hover:bg-purple-700 focus:ring-purple-500',
+      primary: 'bg-[#4169E1] text-white hover:bg-[#365bd1] focus:ring-[#4169E1] shadow-sm hover:shadow-md',
+      secondary: 'bg-transparent text-[#4169E1] border-2 border-[#4169E1] hover:bg-[#4169E1] hover:text-white focus:ring-[#4169E1]',
       outline: 'border-2 border-gray-300 text-gray-700 hover:bg-gray-100 focus:ring-gray-500',
       ghost: 'text-gray-700 hover:bg-gray-100 focus:ring-gray-500',
-      link: 'text-blue-600 hover:text-blue-700 underline-offset-4 hover:underline',
+      link: 'text-[#4169E1] hover:text-[#365bd1] underline-offset-4 hover:underline',
     };
 
     const sizeClasses = {

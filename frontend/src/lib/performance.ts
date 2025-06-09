@@ -259,13 +259,13 @@ export async function trackWebVitals() {
   if (typeof window === 'undefined') return;
   
   try {
-    const { getCLS, getFID, getFCP, getLCP, getTTFB } = await import('web-vitals');
+    const webVitals = await import('web-vitals');
     
-    getCLS(onMetric);
-    getFID(onMetric);
-    getFCP(onMetric);
-    getLCP(onMetric);
-    getTTFB(onMetric);
+    webVitals.onCLS(onMetric);
+    webVitals.onINP(onMetric); // INP replaced FID in web-vitals v5
+    webVitals.onFCP(onMetric);
+    webVitals.onLCP(onMetric);
+    webVitals.onTTFB(onMetric);
   } catch (error) {
     console.error('Failed to load web-vitals:', error);
   }

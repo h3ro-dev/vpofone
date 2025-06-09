@@ -1,4 +1,5 @@
 /** @type {import('next').NextConfig} */
+const crypto = require('crypto');
 
 const securityHeaders = [
   {
