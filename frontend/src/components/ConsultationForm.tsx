@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { Button } from '@/components/ui/Button';
+import { notifyLead, utmFromLocation } from '@/lib/notifyLead';
 
 interface ConsultationFormProps {
   onSuccess?: () => void;
@@ -47,6 +48,14 @@ export function ConsultationForm({ onSuccess }: ConsultationFormProps) {
       }
 
       setSuccess(true);
+      // Fire-and-forget Slack notifier
+      try {
+        const page_url = typeof window !== 'undefined' ? window.location.href : '';
+        const payload = { ...formData, page_url, ...utmFromLocation() };
+        notifyLead('consultation', payload);
+      } catch (e) {
+        console.warn('notifyLead skipped', e);
+      }
       if (onSuccess) {
         setTimeout(onSuccess, 2000);
       }
